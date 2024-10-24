@@ -4,7 +4,6 @@ import google.generativeai as genai
 import os
 import sqlite3
 
-# Load environment variables
 load_dotenv()
 
 # Configure Google Gemini API
@@ -39,10 +38,8 @@ prompt = ["""
 
 """]
 
-# Set the page configuration
 st.set_page_config(page_title="Ask Anything: Instantly Retrieve Insights from Student Records", page_icon="🤖", layout="centered")
 
-# Custom CSS for colors and styling
 st.markdown("""
     <style>
         .main-container {
@@ -111,24 +108,26 @@ st.sidebar.write("- List all students above 21 years of age.")
 st.sidebar.write("- Find the second highest scoring student in 'Data Science' or 'Python Django ?")
 
 
-# Main container for chatbot UI
 with st.container():
     st.markdown("<h1 class='title-text'>Effortlessly Turn Your Questions Into Actionable Data</h1>", unsafe_allow_html=True)
     st.markdown("<h4 class='sub-header'>Ask your questions, and get the data you need!</h4>", unsafe_allow_html=True)
 
-    # Input section for the user's question
-    st.markdown("<h4 class='input-label'>Enter your question about the student database:</h4>", unsafe_allow_html=True)
-    question = st.text_input("", placeholder="E.g., How many students are in Data Science?", key='input',label_visibility="visible")
 
-    # Submit button
+    st.markdown("<h4 class='input-label'>Enter your question about the student database:</h4>", unsafe_allow_html=True)
+
+    question = st.text_input(
+    label="Question", 
+    placeholder="E.g., How many students are in Data Science?",
+    key='input',
+    label_visibility="hidden"  )
+    
     submit = st.button("Show Results")
 
-    # Handle query generation and display results
+
     if submit:
         if question:
             sql_query = get_gemini_response(question=question, prompt=prompt)
             
-            # Fetch and display data from the database
             response = read_sql_query(sql=sql_query, db="student.db")
             
             if response:
