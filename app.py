@@ -118,7 +118,7 @@ with st.container():
 
     # Input section for the user's question
     st.markdown("<h4 class='input-label'>Enter your question about the student database:</h4>", unsafe_allow_html=True)
-    question = st.text_input("", placeholder="E.g., How many students are in Data Science?", key='input')
+    question = st.text_input("", placeholder="E.g., How many students are in Data Science?", key='input',label_visibility="visible")
 
     # Submit button
     submit = st.button("Show Results")
