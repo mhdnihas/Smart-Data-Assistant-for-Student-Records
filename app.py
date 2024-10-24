@@ -28,45 +28,112 @@ def read_sql_query(sql, db):
 
 # Prompt for Gemini model
 prompt = ["""
-    You are the expert in converting English questions into SQL queries! 
+    You are an expert at converting English questions into SQL queries! 
     The SQL Database has a student table with the following columns: 
     NAME, AGE, GENDER, CLASS, SECTION, MARKS.
-    For example:
+    Examples:
     1. How many records are present? -> select * from student;
     2. Who is studying Mern Stack? -> select * from student where CLASS='Mern Stack';
-    Please note that the SQL code should not include '```' at the beginning or end, and should not have the word 'sql'.
+
+    also the sql code should not have ``` in beginning or end and sql word in output
+
 """]
 
 # Set the page configuration
-st.set_page_config(page_title="SQL Query Generator with Gemini", page_icon=":robot_face:", layout="centered")
+st.set_page_config(page_title="Ask Anything: Instantly Retrieve Insights from Student Records", page_icon="🤖", layout="centered")
 
-# Title and Header styling
-st.markdown("<h1 style='text-align: center; color: #3366cc;'>Gemini SQL Query Generator</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: #ff6600;'>Ask questions, get SQL queries, and retrieve data!</h3>", unsafe_allow_html=True)
+# Custom CSS for colors and styling
+st.markdown("""
+    <style>
+        .main-container {
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .title-text {
+            text-align: center;
+            color: #2E86C1;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .sub-header {
+            text-align: center;
+            color: #F39C12;
+            margin-bottom: 30px;
+        }
+        .input-label {
+            color: #117864;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .stButton>button {
+            background-color: #2E86C1;
+            color: white;
+            border-radius: 5px;
+            padding: 8px 15px;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        .stButton>button:hover {
+            background-color: #21618C;
+        }
+        .result-label {
+            color: #1C2833;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .no-records {
+            color: #E74C3C;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .sidebar-container {
+            background-color: #EBF5FB;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .stAlert {
+            background-color: #FADBD8;
+            color: #E74C3C;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
-# Input section for the user's question
-st.markdown("<h4 style='color: #006600;'>Enter your question about the student database:</h4>", unsafe_allow_html=True)
-question = st.text_input("", placeholder="E.g., How many students are in Data Science?", key='input')
+# Sidebar with example questions
+st.sidebar.markdown("<h3 style='color: #2E86C1;'>Example Questions</h3>", unsafe_allow_html=True)
+st.sidebar.write("- give the information of all students ?")
+st.sidebar.write("- How many students are in Data Science?")
+st.sidebar.write("- Show students in Mern Stack class.")
+st.sidebar.write("- What is the average marks of students?")
+st.sidebar.write("- List all students above 21 years of age.")
 
-# Submit button with styling
-submit = st.button("Generate SQL Query", help="Click to generate SQL and retrieve data")
+# Main container for chatbot UI
+with st.container():
+    st.markdown("<h1 class='title-text'>Effortlessly Turn Your Questions Into Actionable Data</h1>", unsafe_allow_html=True)
+    st.markdown("<h4 class='sub-header'>Ask your questions, and get the data you need!</h4>", unsafe_allow_html=True)
 
-# If the user submits a question
-if submit:
-    if question:
-        sql_query = get_gemini_response(question=question, prompt=prompt)
-        st.markdown("<h4 style='color: #003366;'>Generated SQL Query:</h4>", unsafe_allow_html=True)
-        st.code(sql_query, language='sql')
-        
-        # Fetch and display data from the database
-        response = read_sql_query(sql=sql_query, db="student.db")
-        
-        # Show the response in a visually appealing format
-        if response:
-            st.markdown("<h4 style='color: #cc0000;'>Query Results:</h4>", unsafe_allow_html=True)
-            for row in response:
-                st.write(row)
+    # Input section for the user's question
+    st.markdown("<h4 class='input-label'>Enter your question about the student database:</h4>", unsafe_allow_html=True)
+    question = st.text_input("", placeholder="E.g., How many students are in Data Science?", key='input')
+
+    # Submit button
+    submit = st.button("Show Results")
+
+    # Handle query generation and display results
+    if submit:
+        if question:
+            sql_query = get_gemini_response(question=question, prompt=prompt)
+            
+            # Fetch and display data from the database
+            response = read_sql_query(sql=sql_query, db="student.db")
+            
+            if response:
+                st.markdown("<h4 class='result-label'>Your Data Insights:</h4>", unsafe_allow_html=True)
+                for row in response:
+                    st.write(row)
+            else:
+                st.error("No records found or invalid query!")
         else:
-            st.error("No records found or invalid query!")
-    else:
-        st.warning("Please enter a question before submitting.")
+            st.warning("Please enter a question before submitting.")
