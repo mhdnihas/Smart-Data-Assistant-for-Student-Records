@@ -7,7 +7,7 @@ import sqlite3
 load_dotenv()
 
 # Configure Google Gemini API
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # Function to get response from Gemini
 def get_gemini_response(question, prompt):
