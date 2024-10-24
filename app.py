@@ -108,6 +108,8 @@ st.sidebar.write("- How many students are in Data Science?")
 st.sidebar.write("- Show students in Mern Stack class.")
 st.sidebar.write("- What is the average marks of students?")
 st.sidebar.write("- List all students above 21 years of age.")
+st.sidebar.write("- Find the second highest scoring student in 'Data Science' or 'Python Django ?")
+
 
 # Main container for chatbot UI
 with st.container():
