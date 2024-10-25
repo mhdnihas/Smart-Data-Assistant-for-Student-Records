@@ -17,7 +17,7 @@ Create Table STUDENT(NAME VARCHAR(25),AGE INT,GENDER VARCHAR(10),CLASS VARCHAR(2
 cursor.execute(table_info)
 
 
-cursor.execute('''Insert into STUDENT values('Muhammed Nihas',22,'MALE','Data Science','A',90)''')
+cursor.execute('''Insert into STUDENT values('Muhammed Nihas',22,'MALE','Data Science','A',100)''')
 cursor.execute('''Insert into STUDENT values('Muhammed Zayid',19,'MALE','Mern Stack','A',100)''')
 cursor.execute('''Insert into STUDENT values('Nihala Sherin',23,'FEMALE','Python Django','B',55)''')
 cursor.execute('''Insert into STUDENT values('Fathima Najla',20,'FEMALE','Flutter','A',60)''')
