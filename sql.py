@@ -8,37 +8,99 @@ cursor=connection.cursor()
 
 # removed old student table
 cursor.execute("DROP TABLE IF EXISTS STUDENT")
+cursor.execute("DROP TABLE IF EXISTS COURSE")
+cursor.execute("DROP TABLE IF EXISTS ENROLLMENT")
 
 
-table_info="""
-Create Table STUDENT(NAME VARCHAR(25),AGE INT,GENDER VARCHAR(10),CLASS VARCHAR(25),SECTION VARCHAR(25) , MARKS INT);
+student_table_info = """
+CREATE TABLE Student (
+    StudentID INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Age INT,
+    Gender VARCHAR(10),
+    Class VARCHAR(50),
+    Section VARCHAR(10),
+    Address VARCHAR(100),
+    DateOfBirth DATE,
+    CGPA FLOAT
+);
 """
 
-cursor.execute(table_info)
+course_table_info = """
+CREATE TABLE Course (
+    CourseID INT PRIMARY KEY,
+    CourseName VARCHAR(100),
+    Credits FLOAT,
+    Semester INT
+);
+""" 
+
+enrollment_table_info = """
+CREATE TABLE Enrollment (
+    EnrollmentID INT PRIMARY KEY,
+    StudentID INT,
+    CourseID INT,
+    EnrollmentDate DATE,
+    FinalGrade VARCHAR(25),
+    Status VARCHAR(20),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
+);
+"""
 
 
-cursor.execute('''Insert into STUDENT values('Muhammed Nihas',22,'MALE','Data Science','A',100)''')
-cursor.execute('''Insert into STUDENT values('Muhammed Zayid',19,'MALE','Mern Stack','A',100)''')
-cursor.execute('''Insert into STUDENT values('Nihala Sherin',23,'FEMALE','Python Django','B',55)''')
-cursor.execute('''Insert into STUDENT values('Fathima Najla',20,'FEMALE','Flutter','A',60)''')
-cursor.execute('''Insert into STUDENT values('Muhammed KM',23,'MALE','Python Django','B',95)''')
-cursor.execute('''Insert into STUDENT values('Vinil',22,'MALE','Data Science','A',85)''')
-cursor.execute('''Insert into STUDENT values('Ahmad Rafi',23,'MALE','Cyber Security','A',50)''')
-cursor.execute('''Insert into STUDENT values('Ali',19,'MALE','Mern Stack','A',60)''')
-cursor.execute('''Insert into STUDENT values('Shadin',19,'MALE','Flutter','B',65)''')
-cursor.execute('''Insert into STUDENT values('Shabeer Ali',25,'MALE','Mern Stack','A',45)''')
 
+cursor.execute(student_table_info)
+cursor.execute(course_table_info)
+cursor.execute(enrollment_table_info)
+
+
+cursor.execute('''INSERT INTO Student (StudentID, Name, Age, Gender, Class, Section, Address, DateOfBirth, CGPA) VALUES
+                
+    (1, 'Alice Johnson', 20, 'Female', 'Data Science', 'A', '123 Maple St, City', '2003-04-15', 3.8),
+    (2, 'Bob Smith', 21, 'Male', 'Web Development', 'B', '456 Oak Ave, City', '2002-05-22', 3.6),
+    (3, 'Charlie Brown', 19, 'Male', 'Mern Stack', 'A', '789 Pine Rd, City', '2004-08-30', 3.9),
+    (4, 'Diana Prince', 22, 'Female', 'Cyber Security', 'B', '321 Elm St, City', '2001-12-12', 3.5),
+    (5, 'Ethan Hunt', 23, 'Male', 'Machine Learning', 'A', '654 Birch Blvd, City', '2000-11-05', 3.7);
+
+               ''')
+
+cursor.execute('''
+               INSERT INTO Course (CourseID, CourseName, Credits, Semester) VALUES
+    (1, 'Introduction to Data Science', 3.0, 1),
+    (2, 'Web Development Basics', 4.0, 1),
+    (3, 'Mern Stack Development', 4.0, 2),
+    (4, 'Cyber Security Fundamentals', 3.0, 1),
+    (5, 'Machine Learning Concepts', 3.0, 2);
+            ''')
+
+
+cursor.execute('''
+            INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID, EnrollmentDate, FinalGrade, Status) VALUES
+    (1, 1, 1, '2023-09-01', 'A', 'Completed'),
+    (2, 2, 2, '2023-09-02', 'B', 'Completed'),
+    (3, 3, 3, '2023-09-01', 'A-', 'Completed'),
+    (4, 4, 4, '2023-09-03', 'B+', 'Completed'),
+    (5, 5, 5, '2023-09-04', 'A', 'In Progress'),
+    (6, 1, 2, '2023-09-05', 'B+', 'In Progress'),
+    (7, 3, 4, '2023-09-06', 'A', 'In Progress'),
+    (8, 2, 1, '2023-09-07', 'C', 'Completed'),
+    (9, 5, 3, '2023-09-08', 'B-', 'In Progress');''')
 
 
 
 print('The inserted Records are :')
 
-data=cursor.execute('Select * from STUDENT')
+data=cursor.execute('Select * from Enrollment')
 
 
 for row in data:
     print(row)
 
+data=cursor.execute('Select * from COURSE')
+
+for row in data:
+    print(row)
 
 ## close the connection 
 connection.commit()
