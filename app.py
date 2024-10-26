@@ -4,6 +4,11 @@ import google.generativeai as genai
 import os
 import sqlite3
 
+import torch
+from transformers import LlamaTokenizer, LlamaForCausalLM, pipelinepy
+from langchain.llms import HuggingFacePipeline
+from langchain import PromptTemplate, LLMChain
+
 load_dotenv()
 
 # Configure Google Gemini API
@@ -27,14 +32,15 @@ def read_sql_query(sql, db):
 
 # Prompt for Gemini model
 prompt = ["""
-    You are an expert at converting English questions into SQL queries! 
-    The SQL Database has a student table with the following columns: 
-    NAME, AGE, GENDER, CLASS, SECTION, MARKS.
-    Examples:
-    1. How many records are present? -> select * from student;
-    2. Who is studying Mern Stack? -> select * from student where CLASS='Mern Stack';
+    You are an SQL expert converting English questions into SQL queries. The database contains three tables:
 
+    Student table with columns: StudentID, Name, Age, Gender, Class, Section, Place, DateOfBirth, and CGPA.
+    Course table with columns: CourseID, CourseName, Credits, and Semester.
+    Enrollment table with columns: EnrollmentID, StudentID, CourseID, EnrollmentDate, FinalGrade, and Status.
+    Use this schema to generate accurate SQL queries in response to questions about student details, course enrollments, grades, and statuses.
+    Ensure the queries are correctly formatted, contain no comments, and do not include any code block markers.
     also the sql code should not have ``` in beginning or end and sql word in output
+
 
 """]
 
@@ -127,7 +133,7 @@ with st.container():
     if submit:
         if question:
             sql_query = get_gemini_response(question=question, prompt=prompt)
-            
+            print("\n SQL Quary:",sql_query)
             response = read_sql_query(sql=sql_query, db="student.db")
             
             if response:
