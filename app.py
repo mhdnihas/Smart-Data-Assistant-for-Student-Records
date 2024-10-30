@@ -4,12 +4,34 @@ import google.generativeai as genai
 import os
 import sqlite3
 
-import torch
-from transformers import LlamaTokenizer, LlamaForCausalLM, pipelinepy
-from langchain.llms import HuggingFacePipeline
-from langchain import PromptTemplate, LLMChain
+
 
 load_dotenv()
+
+base_model = LlamaForCausalLM.from_pretrained(
+    "chavinlo/alpaca-native",
+    load_in_8bit=True,
+    device_map='auto',
+)
+
+
+tokenizer = LlamaTokenizer.from_pretrained("chavinlo/alpaca-native")
+
+pipe = pipeline(
+    "text-generation",
+    model=base_model,
+    tokenizer=tokenizer,
+    max_length=500,
+    temperature=0.3,
+    top_p=0.95,
+    repetition_penalty=1.2
+)
+
+local_llm = HuggingFacePipeline(pipeline=pipe)
+llm_chain = LLMChain(prompt=prompt, llm=local_llm)
+
+
+
 
 # Configure Google Gemini API
 genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
@@ -37,12 +59,22 @@ prompt = ["""
     Student table with columns: StudentID, Name, Age, Gender, Class, Section, Place, DateOfBirth, and CGPA.
     Course table with columns: CourseID, CourseName, Credits, and Semester.
     Enrollment table with columns: EnrollmentID, StudentID, CourseID, EnrollmentDate, FinalGrade, and Status.
-    Use this schema to generate accurate SQL queries in response to questions about student details, course enrollments, grades, and statuses.
+         course enrollments, grades, and statuses.
     Ensure the queries are correctly formatted, contain no comments, and do not include any code block markers.
     also the sql code should not have ``` in beginning or end and sql word in output
 
 
 """]
+
+
+
+
+def get_llm_response(tble,question,cols):
+    llm_chain = LLMChain(prompt=prompt, 
+                         llm=local_llm
+                         )
+    response= llm_chain.run({"Table" : tble,"question" :question, "Columns" : cols})
+    print(response)
 
 st.set_page_config(page_title="Ask Anything: Instantly Retrieve Insights from Student Records", page_icon="🤖", layout="centered")
 
