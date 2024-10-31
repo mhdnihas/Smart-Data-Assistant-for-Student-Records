@@ -3,32 +3,14 @@ import streamlit as st
 import google.generativeai as genai
 import os
 import sqlite3
+import pandas as pd
 
 
 
 load_dotenv()
 
-base_model = LlamaForCausalLM.from_pretrained(
-    "chavinlo/alpaca-native",
-    load_in_8bit=True,
-    device_map='auto',
-)
 
 
-tokenizer = LlamaTokenizer.from_pretrained("chavinlo/alpaca-native")
-
-pipe = pipeline(
-    "text-generation",
-    model=base_model,
-    tokenizer=tokenizer,
-    max_length=500,
-    temperature=0.3,
-    top_p=0.95,
-    repetition_penalty=1.2
-)
-
-local_llm = HuggingFacePipeline(pipeline=pipe)
-llm_chain = LLMChain(prompt=prompt, llm=local_llm)
 
 
 
@@ -48,9 +30,10 @@ def read_sql_query(sql, db):
     cur = conn.cursor()
     cur.execute(sql)
     rows = cur.fetchall()
+    column_names = [description[0] for description in cur.description]
     conn.commit()
     conn.close()
-    return rows
+    return rows,column_names
 
 # Prompt for Gemini model
 prompt = ["""
@@ -60,6 +43,7 @@ prompt = ["""
     Course table with columns: CourseID, CourseName, Credits, and Semester.
     Enrollment table with columns: EnrollmentID, StudentID, CourseID, EnrollmentDate, FinalGrade, and Status.
          course enrollments, grades, and statuses.
+    Given a question, Write SQL queries to retrieve information from the SQLite database.  To support the database structure, use partial matching with the LIKE clause when searching course names, rather than exact matches. For example, if asked for "Data Science" or "Python Django" courses, look for course names containing "Data Science" or "Python" using LIKE statements.
     Ensure the queries are correctly formatted, contain no comments, and do not include any code block markers.
     also the sql code should not have ``` in beginning or end and sql word in output
 
@@ -67,14 +51,6 @@ prompt = ["""
 """]
 
 
-
-
-def get_llm_response(tble,question,cols):
-    llm_chain = LLMChain(prompt=prompt, 
-                         llm=local_llm
-                         )
-    response= llm_chain.run({"Table" : tble,"question" :question, "Columns" : cols})
-    print(response)
 
 st.set_page_config(page_title="Ask Anything: Instantly Retrieve Insights from Student Records", page_icon="🤖", layout="centered")
 
@@ -164,14 +140,28 @@ with st.container():
 
     if submit:
         if question:
-            sql_query = get_gemini_response(question=question, prompt=prompt)
-            print("\n SQL Quary:",sql_query)
-            response = read_sql_query(sql=sql_query, db="student.db")
+            generated_sql = get_gemini_response(question=question, prompt=prompt)
+            print("\n SQL Quary:",generated_sql)
+
+            generated_sql = generated_sql.replace("CourseName = 'Data Science'", "CourseName = 'Introduction to Data Science'")
+            generated_sql = generated_sql.replace("CourseName = 'Web Development'", "CourseName = 'Web Development Basics'")
+            generated_sql = generated_sql.replace("CourseName = 'Mern Stack'", "CourseName = 'Mern Stack Development'")
+            generated_sql = generated_sql.replace("CourseName = 'Cyber Security'", "CourseName = 'Cyber Security Fundamentals'")
+            generated_sql = generated_sql.replace("CourseName = 'Machine Learning'", "CourseName = 'Machine Learning Concepts'")
+            generated_sql = generated_sql.replace("CourseName = 'Data Science'", "CourseName = 'Advanced Data Science'")
+            generated_sql = generated_sql.replace("CourseName = 'Web Development'", "CourseName = 'Full-Stack Development'")
+            generated_sql = generated_sql.replace("CourseName = 'Cyber Security'", "CourseName = 'Ethical Hacking'")
+            generated_sql = generated_sql.replace("CourseName = 'Machine Learning'", "CourseName = 'Deep Learning'")
+            generated_sql = generated_sql.replace("CourseName = 'AI and ML Integration'", "CourseName = 'Deep Learning'")
+
+
+
+            response,column_names = read_sql_query(sql=generated_sql , db="student.db")
             
             if response:
+                df = pd.DataFrame(response, columns=column_names)
                 st.markdown("<h4 class='result-label'>Your Data Insights:</h4>", unsafe_allow_html=True)
-                for row in response:
-                    st.write(row)
+                st.dataframe(df, use_container_width=True)  
             else:
                 st.error("No records found or invalid query!")
         else:
