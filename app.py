@@ -27,6 +27,7 @@ def read_sql_query(sql, db):
     conn.commit()
     conn.close()
     return rows, column_names
+    
 
 # Function to show database schema
 def show_database_schema():
@@ -137,7 +138,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Sidebar for navigation
 st.sidebar.markdown("<h3 style='color: #2E86C1;'>Navigation</h3>", unsafe_allow_html=True)
 selected_option = st.sidebar.radio("Select Interface:", ("View Database Schema", "Ask a Question"))
 
@@ -163,19 +163,19 @@ elif selected_option == "Ask a Question":
     if submit:
         if question:
             generated_sql = get_gemini_response(question=question, prompt=prompt)
-            print("\n SQL Query:", generated_sql)
+            st.write(f"\n SQL Query: {generated_sql}")  # For debugging, show the generated SQL query
 
             # Replace specific course names for clarity
             replacements = {
-                "CourseName = 'Data Science'": "CourseName = 'Introduction to Data Science'",
-                "CourseName = 'Web Development'": "CourseName = 'Web Development Basics'",
-                "CourseName = 'Mern Stack'": "CourseName = 'Mern Stack Development'",
-                "CourseName = 'Cyber Security'": "CourseName = 'Cyber Security Fundamentals'",
-                "CourseName = 'Machine Learning'": "CourseName = 'Machine Learning Concepts'",
-                "CourseName = 'Advanced Data Science'": "CourseName = 'Advanced Data Science'",
-                "CourseName = 'Full-Stack Development'": "CourseName = 'Full-Stack Development'",
-                "CourseName = 'Ethical Hacking'": "CourseName = 'Ethical Hacking'",
-                "CourseName = 'Deep Learning'": "CourseName = 'Deep Learning'",
+                "CourseName = 'Data Science'": "CourseName LIKE '%Data Science%'",
+                "CourseName = 'Web Development'": "CourseName LIKE '%Web Development%'",
+                "CourseName = 'Mern Stack'": "CourseName LIKE '%Mern Stack%'",
+                "CourseName = 'Cyber Security'": "CourseName LIKE '%Cyber Security%'",
+                "CourseName = 'Machine Learning'": "CourseName LIKE '%Machine Learning%'",
+                "CourseName = 'Advanced Data Science'": "CourseName LIKE '%Advanced Data Science%'",
+                "CourseName = 'Full-Stack Development'": "CourseName LIKE '%Full-Stack Development%'",
+                "CourseName = 'Ethical Hacking'": "CourseName LIKE '%Ethical Hacking%'",
+                "CourseName = 'Deep Learning'": "CourseName LIKE '%Deep Learning%'",
             }
             for old, new in replacements.items():
                 generated_sql = generated_sql.replace(old, new)
