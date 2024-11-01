@@ -1,0 +1,201 @@
+StudentID,Name,Age,Gender,Class,Section,Place,DateOfBirth,CGPA
+1,Cyrill Dovermann,24,Male,Web Development,A,0 Hayes Junction,4/27/2000,4.1
+2,Essy Benzi,25,Female,Data Science,C,760 Hauk Avenue,2/26/1997,7.7
+3,Tania Purle,18,Female,Web Development,A,1 Sunfield Place,5/9/2003,5.7
+4,Sheppard Raddenbury,23,Male,Data Science,B,33 Harper Court,11/29/2000,4.3
+5,Gaven Domnick,26,Male,Machine Learning,C,9963 Lakewood Parkway,6/27/1998,8.8
+6,Sonni Hungerford,20,Female,Mern Stack,A,4683 Del Sol Place,10/30/2004,8.6
+7,Maggee Maunsell,18,Female,Mern Stack,C,14 Linden Hill,6/2/2004,9.4
+8,Coop Gussin,23,Male,Cyber Security,B,848 Wayridge Way,3/23/2001,9.5
+9,Miner Quarterman,23,Male,Mern Stack,A,956 Caliangt Way,2/11/1999,9.1
+10,Roseline Mudd,20,Female,Machine Learning,A,27 Rusk Road,5/22/2004,4.8
+11,Neville Errichiello,22,Genderfluid,Machine Learning,C,7907 Jana Trail,12/12/2005,9.4
+12,Nadya Orry,22,Female,Mern Stack,C,0 Del Sol Trail,10/17/2003,9.6
+13,Beulah Downing,23,Female,Mern Stack,A,9 Spaight Terrace,1/30/2000,4.8
+14,Viki Dorgan,24,Female,Mern Stack,C,700 Grover Parkway,3/5/2005,3.5
+15,Costanza Skiplorne,25,Female,Machine Learning,A,44 Northfield Park,8/2/2005,5.9
+16,Allard Meade,26,Male,Web Development,C,287 Thackeray Point,5/31/2001,6.9
+17,Avictor Presdie,26,Male,Web Development,A,3834 Mcbride Road,4/18/1998,2.9
+18,Shermie Fleischmann,18,Male,Mern Stack,A,931 Schiller Park,8/24/2000,9.8
+19,Nero Sweetzer,24,Male,Machine Learning,A,55640 Caliangt Terrace,10/5/2000,4.0
+20,Shelley Verman,25,Female,Data Science,A,90795 Duke Circle,5/20/2002,2.9
+21,Glennie Mannion,26,Female,Web Development,C,17509 Vernon Hill,4/25/2005,5.8
+22,Othilia Rudland,22,Female,Web Development,A,70 Bultman Hill,7/3/1998,6.2
+23,Aleksandr Alans,24,Male,Data Science,C,8 Lakeland Alley,1/20/2005,9.0
+24,Warden Miranda,26,Male,Machine Learning,C,324 Sage Drive,1/25/1999,6.0
+25,Kiele Kauble,19,Female,Data Science,A,56 Merry Crossing,1/1/2001,7.4
+26,Stormie Red,26,Female,Data Science,A,8200 Mendota Place,5/18/2005,7.3
+27,Tomasine Barwise,18,Genderqueer,Machine Learning,C,439 Melvin Way,2/18/2006,9.5
+28,Daphne Burdin,18,Female,Web Development,A,1 Carey Lane,10/16/2001,7.5
+29,Nickola Remnant,18,Male,Mern Stack,A,51 Lillian Junction,1/23/1998,6.2
+30,Karlene Moohan,26,Genderfluid,Web Development,C,949 Bartillon Park,11/22/2001,6.1
+31,Cornelius Peake,21,Male,Data Science,C,1266 Loeprich Avenue,9/2/2005,5.6
+32,Jolie Smitheram,20,Female,Cyber Security,A,9563 Golf Road,5/14/2005,7.2
+33,Merridie Risbie,25,Female,Web Development,B,429 Autumn Leaf Park,3/23/2000,8.7
+34,Ashlee Hannaby,26,Female,Data Science,A,518 5th Point,7/8/1997,8.1
+35,Bryn Itzhaiek,24,Male,Machine Learning,B,74871 Monica Pass,11/4/2005,5.4
+36,Chelsie Nicholes,19,Female,Machine Learning,B,7 Fair Oaks Alley,12/13/2005,8.3
+37,Stephanus Sitford,25,Male,Data Science,A,2 Lunder Circle,3/30/2006,2.9
+38,Lyndsey McGlynn,25,Female,Mern Stack,C,0 Green Parkway,2/1/2004,3.8
+39,Care Philliskirk,22,Male,Cyber Security,A,61 Forest Run Avenue,11/20/2004,3.3
+40,Axe Ashall,25,Male,Mern Stack,A,67989 Annamark Plaza,7/5/2001,9.2
+41,Paxon Loakes,26,Male,Machine Learning,B,8950 Scofield Court,11/27/2001,7.4
+42,Shandie Brunotti,18,Female,Machine Learning,A,3794 Elka Street,4/8/1998,8.6
+43,Filmore Constantine,22,Male,Data Science,A,6 Farragut Court,1/23/2002,3.8
+44,Janeen Gowman,26,Female,Data Science,C,9 Little Fleur Lane,9/15/1998,6.5
+45,Gillan Tilzey,24,Female,Data Science,C,4 Roxbury Park,8/10/1998,9.7
+46,Blayne Kaindl,18,Male,Web Development,C,4472 Springs Street,5/5/1998,7.6
+47,Marcellus Kearns,22,Male,Data Science,C,2 8th Street,12/18/2001,6.6
+48,Janetta Woolway,23,Female,Machine Learning,A,8 Pawling Center,5/4/1997,4.8
+49,Louis Pigney,19,Male,Data Science,C,69 Shelley Hill,12/18/2004,8.1
+50,Aleen Burnett,18,Female,Machine Learning,A,6 Quincy Alley,8/6/1998,6.4
+51,Gerda Signorelli,19,Female,Web Development,C,38564 Hayes Crossing,2/16/2002,5.6
+52,Alayne Punt,18,Female,Data Science,C,26843 Springview Crossing,11/19/1997,3.8
+53,Niels Menloe,23,Male,Cyber Security,C,7 Mccormick Center,1/1/1998,4.8
+54,Katleen Gregol,18,Female,Mern Stack,A,4058 Bluestem Park,12/26/2002,8.6
+55,Godfrey Carroll,22,Male,Cyber Security,A,3 Hollow Ridge Alley,1/7/1999,3.6
+56,Shaun Williscroft,23,Male,Data Science,B,665 Morningstar Street,7/18/1998,5.5
+57,Jerad Mandres,26,Male,Data Science,C,527 Ludington Center,10/5/2002,3.5
+58,Kaila Malam,24,Female,Cyber Security,C,2 Surrey Plaza,12/18/1996,3.7
+59,Zilvia Hopkins,21,Female,Mern Stack,A,4056 Sugar Road,6/21/1997,7.1
+60,Aili Behninck,19,Female,Cyber Security,C,19049 Carpenter Parkway,1/4/1998,7.7
+61,Brina Scambler,20,Female,Mern Stack,A,5344 Stephen Lane,7/24/1997,4.7
+62,Clyde Cronshaw,22,Male,Cyber Security,A,2070 Melrose Way,10/23/2005,6.7
+63,Darill Rockell,18,Male,Machine Learning,B,24 Union Junction,12/21/1999,8.7
+64,Thalia Gland,23,Female,Data Science,C,0 Sutteridge Court,8/17/2001,5.5
+65,Egbert Bickerstaffe,21,Male,Web Development,B,85876 Morning Trail,5/14/2000,4.8
+66,Bendick Collis,18,Male,Machine Learning,A,06 Schiller Road,4/25/1998,3.7
+67,Truman Veivers,26,Male,Data Science,A,4 Butternut Hill,10/22/2004,5.3
+68,Lilian Morrice,19,Female,Cyber Security,A,63334 Sauthoff Alley,1/24/2005,9.6
+69,Catharine Richter,26,Female,Cyber Security,B,02 Namekagon Place,8/22/2002,6.6
+70,Karl Cone,23,Male,Web Development,B,79138 Northwestern Drive,2/12/1998,8.6
+71,Mariam Snar,22,Female,Data Science,B,544 Delaware Drive,2/12/2000,5.6
+72,Orville Willoughley,26,Male,Web Development,C,88717 Summerview Crossing,5/11/1997,5.3
+73,Lurette De Normanville,21,Female,Machine Learning,C,850 Michigan Street,4/2/2002,7.9
+74,Perry Miranda,22,Male,Data Science,C,83 Center Hill,12/1/1999,6.0
+75,Codi Flatley,18,Female,Machine Learning,A,63 Dovetail Avenue,10/25/2005,4.7
+76,Reginauld Olpin,18,Male,Mern Stack,C,273 Armistice Point,12/17/1998,3.4
+77,Cornall Pecha,25,Male,Data Science,C,96754 West Pass,1/16/1999,5.4
+78,Ilka Geare,19,Female,Cyber Security,A,52 Annamark Drive,1/11/2005,6.0
+79,Felicity Howton,21,Female,Mern Stack,A,6 Almo Court,9/15/1999,3.0
+80,Patin Gaffney,24,Bigender,Cyber Security,A,995 Valley Edge Alley,1/11/2005,3.6
+81,Felice Brigdale,20,Female,Machine Learning,C,45561 Eagle Crest Pass,6/23/1999,4.5
+82,Shaine Peaddie,22,Male,Cyber Security,A,6483 Old Gate Plaza,3/9/1997,7.0
+83,Bianca Klimkovich,23,Female,Machine Learning,A,0 Thierer Drive,12/4/2001,5.4
+84,Ewan Theml,18,Male,Cyber Security,C,4 American Ash Center,12/24/2000,8.7
+85,Stormi Tolomei,18,Female,Web Development,C,81 Shoshone Drive,8/19/1998,7.0
+86,Euell Neubigging,18,Male,Cyber Security,C,79 Paget Point,9/29/2001,5.8
+87,Humfrid Brandham,19,Male,Machine Learning,B,99 Bultman Pass,4/1/2005,4.1
+88,Trula Pedler,18,Female,Cyber Security,C,0 Lakeland Trail,1/26/2003,8.7
+89,Simon Marishenko,26,Male,Web Development,A,246 Carberry Drive,9/7/2002,4.5
+90,Tobias Sanchez,21,Male,Web Development,B,1 Merry Hill,4/14/2006,9.0
+91,Kordula McIntee,20,Non-binary,Data Science,C,54 Farwell Center,12/4/2004,5.6
+92,Gare Briskey,26,Male,Machine Learning,B,62 Meadow Ridge Hill,8/22/1999,9.6
+93,Aymer Mitchley,21,Male,Mern Stack,C,741 Dawn Road,4/20/2000,5.0
+94,Merrie Lewzey,18,Female,Web Development,A,7 Towne Crossing,4/23/2003,6.8
+95,Terrance Sephton,23,Non-binary,Machine Learning,C,25864 Debs Point,10/5/1996,5.7
+96,Ingmar Neubigging,22,Male,Cyber Security,A,3721 Golden Leaf Alley,9/7/2003,9.0
+97,Shanna Van Merwe,24,Female,Machine Learning,C,939 Bultman Crossing,3/25/2003,4.3
+98,Salmon Larman,19,Bigender,Web Development,B,90 Dunning Avenue,4/2/2000,4.3
+99,Jody Hast,25,Female,Machine Learning,B,410 Old Shore Drive,2/19/2003,7.0
+100,Grange Bisiker,21,Male,Data Science,B,04 Graceland Circle,3/11/2005,7.8
+101,Marlyn Piscot,21,Female,Cyber Security,A,3 Acker Avenue,11/28/1996,6.8
+102,Milt Pernell,19,Male,Web Development,B,0225 Melody Drive,11/5/1997,8.9
+103,Salomo Poulsum,20,Male,Web Development,A,26 Thierer Crossing,1/17/2003,4.8
+104,Packston Savell,25,Male,Web Development,B,09661 Gulseth Junction,1/8/2006,4.5
+105,Thacher Donisthorpe,21,Male,Machine Learning,C,55 Dahle Street,4/11/2005,3.9
+106,Fayre Trattles,26,Female,Cyber Security,A,437 Tony Court,11/24/2005,7.9
+107,Vevay Sponder,19,Female,Data Science,C,0001 Larry Avenue,8/14/2001,7.7
+108,Heriberto Morson,25,Male,Machine Learning,C,4 Westerfield Park,6/18/1997,8.5
+109,Sindee Bromilow,23,Female,Mern Stack,A,012 Hayes Junction,6/23/2001,7.7
+110,Ariella Giacaponi,18,Female,Mern Stack,A,34389 Oakridge Street,7/11/1999,8.5
+111,Courtney Pell,24,Male,Web Development,C,161 Haas Alley,5/26/2005,4.2
+112,Bidget Skain,24,Female,Mern Stack,A,6174 Moulton Parkway,7/15/1998,7.3
+113,Roobbie Mehew,18,Female,Mern Stack,C,06 Hoepker Road,2/6/2000,7.5
+114,Maureen Dyas,18,Female,Web Development,B,98222 Grasskamp Terrace,5/29/1997,2.8
+115,Francesca Newens,26,Female,Cyber Security,A,6 Vernon Place,11/8/1997,5.5
+116,Korey Cloy,23,Male,Data Science,B,768 Katie Place,11/19/1996,5.8
+117,Hettie Jedrachowicz,26,Female,Machine Learning,B,5899 Spohn Place,1/27/2003,6.2
+118,Ciro Ferryman,18,Male,Data Science,B,075 Shoshone Center,5/31/2003,5.6
+119,Lancelot Causley,22,Male,Data Science,B,366 Stuart Terrace,11/10/1997,9.2
+120,Joanie Davidge,23,Female,Machine Learning,A,9798 Moulton Court,12/8/1996,4.3
+121,Cari Lothean,19,Female,Cyber Security,C,6 Brown Terrace,6/30/1999,6.4
+122,Denyse Haydn,18,Female,Mern Stack,B,84814 Commercial Court,3/5/2004,3.3
+123,Thatcher Rosenau,20,Male,Mern Stack,C,7503 Meadow Ridge Way,6/23/2000,8.8
+124,Gabbie Huxley,25,Male,Web Development,A,7431 Corscot Terrace,9/12/2000,4.5
+125,Yuma Merlin,22,Male,Web Development,C,076 Schiller Point,10/16/1996,8.3
+126,Robinet Tarbett,24,Female,Web Development,B,6 Drewry Junction,9/30/2003,6.5
+127,Abdel De Cruz,20,Male,Cyber Security,B,2383 John Wall Plaza,8/5/1997,7.4
+128,Wait Fielding,20,Male,Cyber Security,A,50400 Blackbird Pass,8/18/1997,7.7
+129,Bartholomew Maughan,24,Male,Data Science,B,10984 Becker Place,11/5/2004,8.5
+130,Becki Jelphs,24,Female,Data Science,C,77 8th Drive,3/13/1999,9.9
+131,Brandise Beadle,22,Non-binary,Web Development,A,4088 Valley Edge Avenue,8/28/2002,4.8
+132,Allx Kirsz,21,Female,Data Science,C,23 Elgar Circle,1/21/2002,2.9
+133,Currey Hampshire,19,Polygender,Web Development,B,689 Dunning Lane,5/25/2003,3.9
+134,Elden Baglow,24,Male,Cyber Security,A,39501 Talmadge Crossing,3/21/2003,4.2
+135,Thurstan Twiddle,21,Male,Web Development,A,7 Sugar Street,8/21/1999,8.8
+136,Ky Blaza,25,Male,Mern Stack,C,5459 Sunbrook Circle,4/13/2000,3.1
+137,Dulcie Itzcovichch,26,Female,Mern Stack,C,9399 South Lane,11/23/1999,9.8
+138,Niki Hamlyn,24,Female,Cyber Security,C,7915 Springview Plaza,4/3/1998,9.6
+139,Betteann Beare,26,Female,Mern Stack,A,93 Bartelt Parkway,3/11/2002,8.1
+140,Georgetta Warham,25,Female,Web Development,B,5 Coleman Lane,11/30/2004,9.6
+141,Bibbie Conrath,20,Female,Machine Learning,B,00404 Graedel Lane,7/5/2001,4.5
+142,Erick Ambroziak,19,Male,Machine Learning,B,4947 Garrison Street,6/3/1998,9.9
+143,Averill Sinnatt,22,Male,Data Science,C,5 7th Alley,1/26/1997,9.5
+144,Mehetabel Blaschek,20,Female,Web Development,A,8400 Loftsgordon Avenue,12/2/2000,8.1
+145,Alfi Malitrott,22,Female,Data Science,A,32 Dorton Avenue,10/8/2002,7.6
+146,Brice Gilbert,20,Male,Machine Learning,B,56000 Longview Circle,3/30/2000,9.9
+147,Quintin Pigny,25,Male,Cyber Security,A,70 Linden Way,11/28/2004,3.5
+148,Herta Fedorchenko,21,Genderqueer,Cyber Security,B,25 Meadow Valley Circle,3/17/2000,8.7
+149,Delilah Duguid,24,Female,Mern Stack,B,45 Schurz Parkway,5/25/2002,5.6
+150,Misti MacQueen,21,Female,Machine Learning,A,02 Dennis Lane,9/7/1998,4.6
+151,Marion Sargison,24,Male,Web Development,A,81619 Oak Valley Park,7/31/2000,7.1
+152,Anatole Dunkley,22,Male,Data Science,A,287 Emmet Park,9/22/2005,7.0
+153,Dar Geffe,21,Male,Mern Stack,B,83167 Thierer Court,9/14/1998,7.0
+154,Raye Crummie,22,Female,Cyber Security,C,8 Scott Place,1/17/2003,8.9
+155,Norma Rounding,24,Female,Mern Stack,B,92 Johnson Parkway,8/31/1999,7.9
+156,Katy MacNair,22,Female,Mern Stack,C,3 Weeping Birch Pass,7/2/2000,9.5
+157,Devlen Vigus,21,Male,Cyber Security,A,53 Ridge Oak Hill,9/14/2004,8.7
+158,Cleon Huxster,22,Male,Web Development,A,44350 Swallow Place,12/23/1999,2.8
+159,Sigismundo Hansill,24,Genderfluid,Web Development,C,1 Duke Way,9/4/2003,3.7
+160,Shina Chadwick,20,Female,Web Development,A,240 Russell Center,12/18/1997,8.4
+161,Tracy Tomaskov,21,Male,Machine Learning,C,36 Little Fleur Street,8/2/1997,9.7
+162,Lena Chestle,19,Female,Web Development,B,80 Pankratz Hill,2/14/2000,5.0
+163,Merilyn Kordt,25,Female,Web Development,C,999 Riverside Court,9/2/2000,4.5
+164,Donovan Grugerr,26,Male,Data Science,B,307 Erie Road,12/27/2005,6.0
+165,Dirk Chstney,18,Male,Web Development,C,64535 Katie Parkway,3/31/2001,6.1
+166,Rebbecca Mugridge,20,Female,Web Development,C,325 Schlimgen Place,5/20/1999,4.1
+167,Augustina Jakov,24,Female,Web Development,A,2685 Little Fleur Way,2/22/2002,6.9
+168,Ceil Hoodless,20,Female,Mern Stack,B,54588 Red Cloud Terrace,1/28/1997,7.0
+169,Abbott Jowsey,24,Genderfluid,Web Development,B,36449 Arrowood Lane,5/12/2002,6.1
+170,Sandy Mendus,22,Female,Cyber Security,A,5 Merry Avenue,12/2/1998,2.8
+171,Mil Swanton,25,Female,Web Development,B,93 Parkside Way,10/23/1996,9.7
+172,Hanan McClintock,19,Male,Cyber Security,C,1 Mockingbird Lane,10/6/1998,3.4
+173,Skelly Mattheis,21,Male,Machine Learning,A,0312 Morning Lane,1/9/2004,4.5
+174,Eduard Pothecary,24,Male,Cyber Security,A,17 Ilene Junction,6/15/2001,5.1
+175,Addie Woollcott,23,Male,Machine Learning,C,9841 Esch Street,7/13/1999,7.6
+176,Luise Southern,19,Female,Mern Stack,A,52706 Mayfield Parkway,2/3/2004,9.9
+177,Lilias McCrone,25,Genderfluid,Data Science,A,2538 Cordelia Crossing,10/22/1998,9.5
+178,Georgette Jakolevitch,22,Female,Mern Stack,A,9 4th Street,9/26/2005,5.0
+179,Julee Meekins,23,Female,Data Science,A,6 Rockefeller Circle,5/26/1999,5.9
+180,Clair Melchior,23,Male,Data Science,A,78 Hanson Terrace,2/20/1997,7.8
+181,Hansiain Dudin,21,Male,Data Science,C,01 Mosinee Road,3/25/2000,7.3
+182,Rochester Romi,19,Male,Mern Stack,B,92 Sloan Pass,5/20/1998,5.9
+183,Martica Beddows,24,Female,Data Science,B,154 Burrows Terrace,8/13/2005,6.0
+184,Andre Mackerel,20,Male,Mern Stack,C,7188 Knutson Court,2/29/2000,7.8
+185,Gibbie Dedmam,24,Male,Mern Stack,A,82380 Vahlen Hill,7/28/1999,7.1
+186,Thacher Corrado,26,Male,Data Science,C,8 Atwood Drive,3/20/2003,4.6
+187,Eberhard Espley,19,Male,Web Development,C,64 Stoughton Trail,6/12/1999,9.8
+188,Nils Misselbrook,23,Male,Web Development,C,5495 Oak Valley Pass,4/13/2000,7.7
+189,Hayley Perritt,25,Female,Machine Learning,A,6 Melrose Trail,11/12/2003,6.8
+190,Torin Ridding,22,Male,Machine Learning,C,25 Myrtle Road,12/19/2003,3.3
+191,Vinnie Maffeo,26,Female,Machine Learning,A,7 Prentice Center,3/4/2004,9.8
+192,Tremaine Hugnot,24,Male,Mern Stack,C,20 Macpherson Place,8/31/2001,5.7
+193,Lonee Brandassi,21,Female,Data Science,B,69 Jenna Drive,4/8/1999,2.8
+194,Melisa Bindin,18,Female,Machine Learning,C,6 Moulton Place,9/19/2005,3.1
+195,Harper Hickin,24,Male,Mern Stack,C,8028 Dapin Drive,4/11/2003,6.4
+196,Kahlil Joney,20,Male,Data Science,C,785 Northview Court,11/25/1998,3.0
+197,Samuel Willingale,20,Male,Data Science,B,651 Melvin Junction,1/12/2004,9.3
+198,Cesar Bew,24,Male,Machine Learning,C,11164 Meadow Valley Avenue,4/10/2003,5.5
+199,Jacquenetta Walewski,21,Polygender,Cyber Security,A,73624 Bunker Hill Point,10/15/1999,7.8
+200,Frankie Dumbleton,23,Male,Cyber Security,C,785 Clemons Park,8/22/2003,8.1
