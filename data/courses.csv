@@ -1,0 +1,26 @@
+CourseID,CourseName,Department,Credits,Instructor
+C001,Fundamentals of Programming,Computer Science,4,Sarah Campos
+C002,Introduction to Algorithms and Data Structures,Computer Science,5,Julie Watts
+C003,Basics of Computer Networks,Computer Science,2,Jodi Jones
+C004,Cybersecurity Fundamentals,Computer Science,4,Kathleen Bates
+C005,Advanced Grammar and Composition,English,3,Breanna Acosta
+C006,English Literature,English,2,Jose Howe
+C007,Critical Thinking Through Reading,English,4,Alex Taylor
+C008,Algebra and Trigonometry,Mathematics,5,Zachary Burgess
+C009,Calculus Basics,Mathematics,3,Shannon Garcia
+C010,Probability and Statistics,Mathematics,2,Ian Patterson
+C011,Mechanics and Kinematics,Physics,4,Christina Morgan
+C012,Thermodynamics Basics,Physics,4,Jessica Welch
+C013,Electricity and Magnetism,Physics,3,Allison Evans
+C014,Atomic Structure and Periodic Table,Chemistry,5,April Zavala
+C015,Chemical Bonding and Molecular Structure,Chemistry,5,Anthony Burch
+C016,Organic Chemistry Basics,Chemistry,3,Kelsey Luna
+C017,Cell Biology and Genetics,Biology,5,Rodney Morris
+C018,Human Anatomy and Physiology,Biology,4,Gary Mccullough
+C019,Plant Physiology,Biology,4,Karen Gonzalez
+C020,Principles of Microeconomics,Economics,3,Rebekah Cordova
+C021,Principles of Macroeconomics,Economics,2,Jeff Thompson
+C022,Indian Economic Development,Economics,5,Sarah White
+C023,Ancient Indian History,History,5,Jessica Bruce
+C024,Modern Indian History,History,2,Jason Bradshaw
+C025,World History,History,3,Sharon Stevens

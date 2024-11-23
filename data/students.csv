@@ -1,0 +1,101 @@
+StudentID,Name,Age,Gender,Class,Section,Place,DateOfBirth,CGPA
+S001,Shawn Torres,16,Male,11,A,Lake Tylerview,2008-05-02,6.85
+S002,Steven Mahoney,17,Male,11,C,Fowlerstad,2007-09-16,8.04
+S003,James Cantu,16,Male,12,C,Joannatown,2008-09-17,9.75
+S004,Brooke Salas,16,Female,11,C,South Brianborough,2008-04-27,9.81
+S005,Lisa Cantu,17,Female,12,B,Hoffmanfurt,2007-09-26,7.05
+S006,James Jones,16,Male,11,A,Port Michellestad,2008-04-24,4.78
+S007,Tyler Perry,18,Male,11,C,Russellland,2006-04-15,8.54
+S008,Tammie Rodriguez,18,Female,11,C,Kempmouth,2006-05-18,8.77
+S009,Steven Richardson,16,Male,12,C,Crystalport,2008-06-16,6.97
+S010,Thomas Roberts,17,Male,11,A,East Danielfort,2007-06-05,7.9
+S011,Dr. Kevin Combs,18,Male,11,B,Port Ashleyfort,2006-04-27,7.33
+S012,Barbara Parks,18,Female,11,A,Lake Katrina,2006-04-17,5.99
+S013,Jill Smith,17,Female,12,C,North Kathryn,2006-12-08,9.23
+S014,Matthew Ramos,16,Male,11,B,Cobbfurt,2008-08-11,6.87
+S015,Duane Swanson,18,Male,12,C,Richardfurt,2006-10-18,6.68
+S016,Sarah Allen,17,Female,11,B,Lunamouth,2007-01-10,5.72
+S017,Jessica Haas,18,Female,11,B,North Zacharyshire,2006-06-21,9.86
+S018,Justin Gutierrez,16,Male,12,C,Banksmouth,2008-01-24,4.81
+S019,Tony Rogers,17,Male,12,B,Murphyberg,2007-04-19,4.04
+S020,Brandy Campbell,16,Female,11,A,South Jose,2008-06-13,9.96
+S021,Sarah Reese,18,Female,12,C,New Timothyland,2006-10-28,5.22
+S022,Amanda Davis,18,Female,12,A,South Marytown,2006-01-13,9.37
+S023,Andrea Conner,17,Female,11,B,Dayfort,2007-11-19,6.27
+S024,Jennifer Grant,16,Female,12,C,Georgestad,2008-08-29,4.72
+S025,Anthony Caldwell,16,Male,11,C,Taylorborough,2007-12-30,4.65
+S026,Kimberly Bird,16,Female,11,B,Lake Jessica,2008-11-06,5.61
+S027,Lori Robinson,18,Female,12,A,Shellyport,2006-03-09,6.69
+S028,Zachary Carter,16,Male,11,B,Lake Kayla,2008-04-25,8.32
+S029,Gina Horn,17,Female,12,C,South Maureen,2007-07-25,8.27
+S030,Scott Thompson,18,Male,12,A,East Amandafurt,2006-11-22,4.46
+S031,Sean Arias,18,Male,11,C,Port Teresa,2006-05-30,7.08
+S032,Shane Hines,18,Male,12,C,New Aliciaberg,2005-12-04,7.34
+S033,Cindy Simpson,17,Female,12,A,Hunterstad,2007-05-15,7.61
+S034,Gwendolyn Gonzales,18,Female,12,A,West Brad,2006-05-17,6.15
+S035,Mary Harris,18,Female,12,B,South Jenniferstad,2006-08-22,5.7
+S036,Lisa Smith,18,Female,12,B,South Sarahtown,2006-03-14,9.51
+S037,Lisa Perez,17,Female,11,C,Reedchester,2007-05-08,4.13
+S038,Sandra Fitzgerald,18,Female,11,B,Lake Donna,2006-05-05,9.9
+S039,Brandon Wilcox,16,Male,12,C,New Danielmouth,2008-02-06,5.93
+S040,Timothy Hamilton,17,Male,12,B,Lopezbury,2007-10-31,5.65
+S041,David Smith,16,Male,11,C,Port Jaredview,2008-03-05,9.62
+S042,Kelly Klein,18,Female,11,C,Elizabethton,2006-10-26,5.19
+S043,Steven White,17,Male,12,C,Porterburgh,2007-04-18,4.62
+S044,Alyssa Harrington,18,Female,12,B,South Tammyfurt,2006-03-25,7.54
+S045,Alicia Bond,18,Female,11,B,Port Ianborough,2005-12-09,8.57
+S046,Robin Park,16,Female,12,C,Janeberg,2008-08-30,8.92
+S047,Alan Taylor,18,Male,12,B,North Leonard,2006-03-17,5.43
+S048,Barbara Andrade,18,Female,11,C,Schneidermouth,2006-05-06,9.72
+S049,Richard Torres,16,Male,12,C,Jamesbury,2008-07-29,7.7
+S050,Charles Gay,17,Male,11,A,West Cassiestad,2007-05-22,5.4
+S051,Richard Howe,17,Male,12,B,South Seanbury,2007-03-31,6.2
+S052,Dawn Giles,17,Female,12,B,Millerside,2007-04-27,5.04
+S053,Kevin Rhodes,17,Male,12,C,Port Richard,2007-01-20,6.18
+S054,Raymond Owen,17,Male,11,C,Davismouth,2007-05-19,4.57
+S055,Johnathan Marshall,18,Male,11,C,Port Ashley,2006-04-08,6.67
+S056,Suzanne Shaw,18,Female,11,B,Lake Christina,2006-04-08,4.41
+S057,Brandon Mccarthy,16,Male,11,A,West Peter,2008-03-03,6.07
+S058,Jessica Payne,17,Female,11,C,Petermouth,2007-09-10,4.71
+S059,Zachary Allison,18,Male,11,C,Nealchester,2005-12-12,4.82
+S060,Anne Miles,17,Female,11,C,West Gregoryfurt,2007-07-20,4.81
+S061,Jill Farmer,17,Female,12,B,Port Ronaldville,2006-12-02,6.11
+S062,Briana Garcia,17,Female,11,C,Port Ashley,2007-06-05,8.46
+S063,Randy West,17,Male,11,C,Matthewchester,2006-12-15,5.83
+S064,Brandi Tran,16,Female,11,B,Sanchezville,2008-06-18,9.71
+S065,Victoria Foster,16,Female,11,C,Jodimouth,2008-05-28,9.35
+S066,Stacy Villa,16,Female,11,B,Davenportton,2008-08-15,7.39
+S067,Shari Caldwell,16,Female,12,B,Sharonfort,2008-07-20,6.58
+S068,Joe Green,18,Male,11,A,Foxville,2006-06-06,5.7
+S069,Brian Cameron,16,Male,11,A,North Brittany,2008-02-28,5.8
+S070,Ralph Cooper,17,Male,12,B,Carpentershire,2007-06-24,7.65
+S071,Julie Garcia,18,Female,12,C,Chandlerside,2006-03-18,5.98
+S072,Amber Roth,18,Female,11,B,Dyermouth,2006-07-12,9.78
+S073,Benjamin Williams,17,Male,11,B,Dayton,2007-10-29,7.48
+S074,Lindsay Conley,16,Female,11,B,Grantchester,2008-03-03,4.51
+S075,Sandra Warren,17,Female,11,A,Chavezmouth,2006-11-28,8.68
+S076,Cassidy Short,17,Female,11,C,Port Angela,2007-03-07,4.95
+S077,Andrew Murphy,16,Male,11,B,Walterfort,2008-05-08,4.73
+S078,Amber Whitney,17,Female,12,A,South Christineview,2007-07-07,6.9
+S079,Scott Young,17,Male,12,B,New Yvetteton,2007-11-08,9.61
+S080,Barbara Ford,18,Female,12,C,West George,2006-03-22,7.78
+S081,Marcus Lopez,17,Male,11,A,New Katherinechester,2006-12-10,6.51
+S082,Michael Scott,18,Male,11,C,Donaldport,2006-05-05,8.38
+S083,Cindy Thompson,17,Female,12,B,Phillipstad,2007-10-16,8.16
+S084,Kyle Stout,18,Male,12,C,East Beth,2006-03-30,9.66
+S085,Douglas Conley,16,Male,11,A,Andrewberg,2008-03-15,8.21
+S086,Monica Gonzalez,16,Female,12,C,South Rita,2008-01-30,5.33
+S087,Brooke Rivera,17,Female,11,A,West Amy,2007-05-19,4.23
+S088,Ian Crawford,17,Male,12,C,West Kyle,2007-07-14,5.89
+S089,Ronald Carroll,18,Male,11,A,Port Anthonychester,2006-06-07,9.96
+S090,Robin Rosales,16,Female,11,B,Hartburgh,2007-12-15,5.69
+S091,Emily Jensen,16,Female,12,C,Port Edwinhaven,2008-10-02,7.02
+S092,Sean Mitchell,17,Male,11,B,Katherineshire,2007-11-05,7.0
+S093,Felicia Cooper,16,Female,12,A,Waltersfort,2008-07-27,6.53
+S094,John Jackson,17,Male,11,A,Whiteville,2007-05-27,8.01
+S095,Destiny Hall,18,Female,12,B,Port Robinchester,2006-01-22,4.56
+S096,Holly Calhoun,18,Female,11,A,Kellyville,2006-09-02,4.11
+S097,Sonya Mejia,16,Female,11,C,Bowenfort,2008-04-27,6.22
+S098,Elizabeth Crawford,17,Female,12,A,Lake Blake,2007-10-31,7.29
+S099,Tanya Wilson,16,Female,12,A,Hartside,2008-05-11,4.27
+S100,Kyle Ramirez,16,Male,11,B,East Kurtburgh,2008-10-12,6.07
