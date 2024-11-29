@@ -27,7 +27,7 @@ def read_sql_query(sql, db):
     conn.commit()
     conn.close()
     return rows, column_names
-<<<<<<< HEAD
+
     
 
 # Function to show database schema
@@ -63,9 +63,7 @@ def show_database_schema():
         - **Status**: Enrollment status (e.g., active, completed).
     """
     st.markdown(schema_info)
-    
-    # Display schema image
-=======
+
 
 
 
@@ -103,7 +101,6 @@ def show_database_schema():
     st.table(course_df)
     st.markdown("### Enrollment Table")
     st.table(enrollment_df)
->>>>>>> bcd598c (data schema updated)
 
 # Prompt for Gemini model
 prompt = ["""
@@ -116,10 +113,6 @@ prompt = ["""
     Given a question, Write SQL queries to retrieve information from the SQLite database. 
     To support the database structure, use partial matching with the LIKE clause when searching course names, rather than exact matches. 
     Ensure the queries are correctly formatted, contain no comments, and do not include any code block markers.
-<<<<<<< HEAD
-=======
-    also the sql code should not have ``` in beginning or end and sql word in output
->>>>>>> bcd598c (data schema updated)
 """]
 
 st.set_page_config(page_title="Student Database Insights", page_icon="🤖", layout="centered")
@@ -182,10 +175,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-<<<<<<< HEAD
-=======
 # Sidebar for navigation
->>>>>>> bcd598c (data schema updated)
 st.sidebar.markdown("<h3 style='color: #2E86C1;'>Navigation</h3>", unsafe_allow_html=True)
 selected_option = st.sidebar.radio("Select Interface:", ("View Database Schema", "Ask a Question"))
 
@@ -211,7 +201,6 @@ elif selected_option == "Ask a Question":
     if submit:
         if question:
             generated_sql = get_gemini_response(question=question, prompt=prompt)
-<<<<<<< HEAD
             st.write(f"\n SQL Query: {generated_sql}")  # For debugging, show the generated SQL query
 
             # Replace specific course names for clarity
@@ -224,8 +213,8 @@ elif selected_option == "Ask a Question":
                 "CourseName = 'Advanced Data Science'": "CourseName LIKE '%Advanced Data Science%'",
                 "CourseName = 'Full-Stack Development'": "CourseName LIKE '%Full-Stack Development%'",
                 "CourseName = 'Ethical Hacking'": "CourseName LIKE '%Ethical Hacking%'",
-                "CourseName = 'Deep Learning'": "CourseName LIKE '%Deep Learning%'",
-=======
+                "CourseName = 'Deep Learning'": "CourseName LIKE '%Deep Learning%'",}
+
             print("\n SQL Query:", generated_sql)
 
             # Replace specific course names for clarity

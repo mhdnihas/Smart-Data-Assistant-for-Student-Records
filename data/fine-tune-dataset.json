@@ -1,0 +1,885 @@
+{
+"messages": [
+
+		{
+            		"role": "user",
+            		"content": "write quary to print the name of students in gender where should two colmns male and female?"
+        	},
+        	{
+            		"role": "assistant",
+            		"content": """
+				SELECT
+				    CASE
+					WHEN Gender = 'Male' THEN Name
+					ELSE NULL
+				    END AS Male,
+					    CASE
+					WHEN Gender = 'Female' THEN Name
+					ELSE NULL
+				    END AS Female
+				FROM
+				    Student;	
+				    """
+       		},
+        
+		{
+            	"role": "user",
+            	"content": "write sudent detail who are in A?"
+		},
+		
+		{
+		    "role": "assistant",
+		    "content": "SELECT * FROM Student WHERE Section = 'A'"
+		},
+        
+                
+                  {
+		    "role": "user",
+		    "content": "Write student details who are in 10th standard"
+		},
+		{
+		    "role": "assistant",
+		    "content": "The database only contains records for students in grades 11 and 12. Could you refine your request?"
+		},
+		
+		 {
+		    "role": "user",
+		    "content": "write student details who have A"
+		},
+		{
+		    "role": "assistant",
+		    "content": """SELECT S.StudentID, S.Name, S.Age, S.Gender, S.Class, S.Section, S.Place, S.DateOfBirth, S.CGPA
+				FROM Student S
+				JOIN Enrollment E ON S.StudentID = E.StudentID
+				WHERE E.Grade = 'A'"""
+		},
+		 	
+		
+		  {
+            "role": "user",
+            "content": "show the students who joined in may and also their grad"
+        },
+        {
+            "role": "assistant",
+            "content": """SELECT S.StudentID, S.Name, E.CourseID, E.Grade
+			FROM Student S
+			JOIN Enrollment E ON S.StudentID = E.StudentID
+			WHERE MONTH(S.DateOfBirth) = '05';"""
+        },
+        
+        {
+            "role": "user",
+            "content": "List the names and CGPA of all male students in class 12."
+        },
+        {
+            "role": "assistant",
+            "content": "SELECT Name, CGPA FROM Student WHERE Class = '12' AND Gender = 'Male';"
+        },
+        
+        {
+            "role": "user",
+            "content": "Find the average CGPA of students in class 12."
+        },
+        {
+            "role": "assistant",
+            "content": "SELECT AVG(CGPA) FROM Student WHERE Class = '12';"
+        },
+        
+        
+        {
+            "role": "user",
+            "content": "Get the names of students who are in class 12, have a CGPA above 8, and are enrolled in 'Data Science' course."
+        },
+        {
+            "role": "assistant",
+            "content": "The course 'Data Science' does not exist in the database. Please provide a valid course name."
+        },
+        
+        
+        {
+            "role": "user",
+            "content": "What courses are taught by 'Dr. Smith'?"
+        },
+        {
+            "role": "assistant",
+            "content": "SELECT CourseName FROM Course WHERE Instructor = 'Dr. Smith';"
+        },
+        
+          	
+        {
+            "role": "user",
+            "content": "Count the number of students enrolled in the 'Machine Learning' course."
+        },
+        {
+            "role": "assistant",
+            "content": "SELECT COUNT(*) FROM Enrollment JOIN Course ON Enrollment.CourseID = Course.CourseID WHERE Course.CourseName = 'Machine Learning';"
+        },
+        
+        {
+            "role": "user",
+            "content": "List the names of students from 'New York' who are enrolled in more than 3 courses."
+        },
+        {
+            "role": "assistant",
+            "content": """SELECT Student.Name FROM Student JOIN Enrollment ON Student.StudentID = Enrollment.StudentID WHERE Student.Place = 'New York'
+             		GROUP BY Student.StudentID HAVING COUNT(Enrollment.CourseID) > 3;"""
+        },
+        {
+            "role": "user",
+            "content": "What is the total number of credits for courses in the 'Computer Science' department?"
+        },
+        {
+            "role": "assistant",
+            "content": "SELECT SUM(Credits) FROM Course WHERE Department = 'Computer Science';"
+        },
+        
+        {
+            "role": "user",
+            "content": "Show the top 5 students with the highest CGPA."
+        },
+        {
+            "role": "assistant",
+            "content": "SELECT * FROM Student ORDER BY CGPA DESC LIMIT 5;"
+        },
+        {
+            "role": "user",
+            "content": "Get the names of all students who have a grade of 'A' in any course."
+        },
+        {
+            "role": "assistant",
+            "content": "SELECT DISTINCT Student.Name FROM Student JOIN Enrollment ON Student.StudentID = Enrollment.StudentID WHERE Enrollment.Grade = 'A';"
+        },
+         {
+            "role": "user",
+            "content": "Get the names of all students who have a grade of 'K' in any course."
+        },
+        {
+            "role": "assistant",
+            "content": "The grade 'K' does not exist in the database. Please provide a valid grade. Available grades are: 'A', 'B', 'C', 'D', 'F', and 'Incomplete'."
+        },
+        
+        {
+            "role": "user",
+            "content": "Show the student who have more than heights 150cm and show also their wights"
+        },
+        {
+            "role": "assistant",
+            "content": "Currently, the Student database does not contain any height or weight data for students."
+        },
+        {
+                "role": "user",
+                "content": "List the names and CGPA of all students."
+         },
+         {
+                "role": "assistant",
+                "content": "SELECT Name, CGPA FROM Student;"
+        },
+        {
+                "role": "user",
+                "content": "Get the names and ages of all male students in class 12."
+        },
+        {
+                "role": "assistant",
+                "content": "SELECT Name, Age FROM Student WHERE Gender = 'Male' AND Class = '12';"
+        },
+        
+        
+       {
+                "role": "user",
+                "content": "Find the names of students who are enrolled in the course 'Introduction to Algorithms and Data Structures'."
+       },
+       {
+                "role": "assistant",
+                "content": "SELECT DISTINCT S.Name FROM Student S JOIN Enrollment E ON S.StudentID = E.StudentID JOIN Course C ON E.CourseID = C.CourseID WHERE C.CourseName = 'Introduction to Algorithms and   Data Structures';"
+       },
+       
+        {
+          "role": "user",
+           "content": "Show the names of students who have a CGPA greater than 8."
+        },
+         {
+                "role": "assistant",
+                "content": "SELECT Name FROM Student WHERE CGPA > 8;"
+         },
+         
+	 {
+                "role": "user",
+                "content": "Get the total number of students in class 12."
+         },
+         {
+                "role": "assistant",
+                "content": "SELECT COUNT(*) FROM Student WHERE Class = '12';"
+         },
+ 	{
+                "role": "user",
+                "content": "Get the total number of students in class 6."
+         },
+         {
+                "role": "assistant",
+                "content": "The database only contains records for students in grades 11 and 12. Could you refine your request?"
+         },
+       
+         {
+                "role": "user",
+                "content": "Show the highest CGPA among all students."
+          },
+          {
+                "role": "assistant",
+                "content": "SELECT MAX(CGPA) FROM Student;"
+          },
+          
+           {
+                "role": "user",
+                "content": "List the names and ages of students who are either in class 10 or have a CGPA greater than 8."
+            },
+            {
+                "role": "assistant",
+                "content": "It seems there is no data for class 10 in the database. The available classes are only 11 and 12. Would you like to refine your query to focus on students in these classes?"
+            },
+        
+        
+            {
+                "role": "user",
+                "content": "Get the names of students who are enrolled in 'Maths'."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT DISTINCT s.Name FROM Student s JOIN Enrollment e ON s.StudentID = e.StudentID JOIN Course c ON e.CourseID = c.CourseID WHERE c.CourseName = 'Algebra and Trigonometry';"
+            },
+            {
+                "role": "user",
+                "content": "Get the names of students who are enrolled in 'Maths'."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT DISTINCT s.Name FROM Student s JOIN Enrollment e ON s.StudentID = e.StudentID JOIN Course c ON e.CourseID = c.CourseID WHERE c.Department = 'Mathematics';"
+            },
+             {
+                "role": "user",
+                "content": "Find the names of students who have completed the 'Basics of Computer Networks' course with a grade of 'A'."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT S.Name FROM Student S JOIN Enrollment E ON S.StudentID = E.StudentID JOIN Course C ON E.CourseID = C.CourseID WHERE C.CourseName = 'Basics of Computer Networks' AND E.Grade = 'A';"
+            },
+             {
+                "role": "user",
+                "content": "Get the list of students along with their enrollment date for the course 'Advanced Grammar and Composition'."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT S.Name, E.EnrollmentDate FROM Student S JOIN Enrollment E ON S.StudentID = E.StudentID JOIN Course C ON E.CourseID = C.CourseID WHERE C.CourseName = 'Advanced Grammar and Composition';"
+            },
+             
+            {
+                "role": "user",
+                "content": "Show the names of students who have been enrolled in a course for more than 10 month."
+            },
+            {
+                "role": "assistant",
+                "content": """SELECT DISTINCT S.Name
+FROM Student S
+JOIN Enrollment E ON S.StudentID = E.StudentID
+WHERE julianday('now') - julianday(E.EnrollmentDate) > 10 * 30;"""
+            },
+            
+            
+                        {
+                "role": "user",
+                "content": "Get the names of students with the highest grades in each course."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT C.CourseName, S.Name, E.Grade FROM Enrollment E JOIN Student S ON E.StudentID = S.StudentID JOIN Course C ON E.CourseID = C.CourseID WHERE (C.CourseID, E.Grade) IN (SELECT CourseID, MAX(Grade) FROM Enrollment GROUP BY CourseID);"
+            },
+            
+                        {
+                "role": "user",
+                "content": "List the names and ages of students in class 11."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT Name, Age FROM Student WHERE Class = 11;"
+            }
+            
+                  {
+                "role": "user",
+                "content": "Find the total number of students enrolled in each course."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT CourseID, COUNT(StudentID) AS TotalStudents FROM Enrollment GROUP BY CourseID;"
+            },
+            
+            
+             {
+                "role": "user",
+                "content": "Show all students who have a CGPA greater than 9 and are in class 12."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT Name FROM Student WHERE CGPA > 9 AND Class = 12;"
+            },
+             
+             {
+                "role": "user",
+                "content": "Show all students who have a CGPA greater than 9 and are in degree."
+            },
+            {
+                "role": "assistant",
+                "content": """The current dataset only includes students in classes 11 and 12. Unfortunately, there is no data for students in a "degree" class.If you would like, I can show all students from class 11 and 12 who have a CGPA greater than 9. Would you like to proceed with that?
+"""
+            },
+                  {
+                "role": "user",
+                "content": "Get the total credits for all courses taught by 'Jodi Jones'."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT SUM(Credits) AS TotalCredits FROM Course WHERE Instructor = 'Jodi Jones';"
+            },
+                 {
+                "role": "user",
+                "content": "List the students who have an 'A' grade in any course."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT DISTINCT S.Name FROM Student S JOIN Enrollment E ON S.StudentID = E.StudentID WHERE E.Grade = 'A';"
+            },
+            
+            
+                    {
+                "role": "user",
+                "content": "Find the students who are not enrolled in any course."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT Name FROM Student WHERE StudentID NOT IN (SELECT StudentID FROM Enrollment);"
+            },
+                    {
+                "role": "user",
+                "content": "List all the classes with the total number of students in each."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT Class, COUNT(StudentID) AS TotalStudents FROM Student GROUP BY Class;"
+             },
+             
+             
+                    {
+                "role": "user",
+                "content": "Get the details of the course with the maximum credits."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT * FROM Course WHERE Credits = (SELECT MAX(Credits) FROM Course);"
+            },
+            
+                        {
+                "role": "user",
+                "content": "Show the names and CGPA of students in class 11 who have enrolled after '2024-01-01'."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT S.Name, S.CGPA FROM Student S JOIN Enrollment E ON S.StudentID = E.StudentID WHERE S.Class = 11 AND E.EnrollmentDate > '2024-01-01';"
+            },
+            
+                 {
+                "role": "user",
+                "content": "Find the average CGPA of students enrolled in 'Physics'."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT AVG(S.CGPA) AS AverageCGPA FROM Student S JOIN Enrollment E ON S.StudentID = E.StudentID JOIN Course C ON E.CourseID = C.CourseID WHERE C.department = 'Physics';"
+            },
+                  {
+                "role": "user",
+                "content": "List all male students with a grade of 'B' in any course."
+            },
+            {
+                "role": "assistant",
+                "content": "SELECT S.Name FROM Student S JOIN Enrollment E ON S.StudentID = E.StudentID WHERE S.Gender = 'Male' AND E.Grade = 'B';"
+            },
+               {
+            "role": "user",
+            "content": "List the names and CGPA of all male students in class 12."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Name, CGPA
+                FROM Student
+                WHERE Gender = 'Male' AND Class = 12;
+            """
+        },
+        {
+            "role": "user",
+            "content": "Find the average CGPA of students in each class."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Class, AVG(CGPA) AS AverageCGPA
+                FROM Student
+                GROUP BY Class;
+            """
+        },
+        {
+            "role": "user",
+            "content": "List all courses taught by 'Dr. Smith'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT CourseName
+                FROM Course
+                WHERE Instructor = 'Dr. Smith';
+            """
+        },
+        
+        
+        {
+            "role": "user",
+            "content": "Get the details of students enrolled in 'Mathematics'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.StudentID, S.Name, S.Age, S.Gender, S.Class, S.Section, S.Place, S.DateOfBirth, S.CGPA
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.department = 'Mathematics';
+            """
+        },   
+        
+            {
+            "role": "user",
+            "content": "Find the number of students in each section."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Section, COUNT(*) AS NumberOfStudents
+                FROM Student
+                GROUP BY Section;
+            """
+        },
+        
+           {
+            "role": "user",
+            "content": "List the names of students who have a CGPA greater than 3.5."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Name
+                FROM Student
+                WHERE CGPA > 3.5;
+            """
+        },
+        
+        
+        
+            {
+            "role": "user",
+            "content": "Get the details of courses with more than 3 credits."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT *
+                FROM Course
+                WHERE Credits > 3;
+            """
+        },
+        
+           {
+            "role": "user",
+            "content": "Find the name of students in the 'Science' department."
+        },
+        {
+            "role": "assistant",
+            "content": """
+		       SELECT DISTINCT S.Name
+		FROM Student S
+		JOIN Enrollment E ON S.StudentID = E.StudentID
+		JOIN Course C ON E.CourseID = C.CourseID
+		WHERE Department IN ('Physics', 'Chemistry', 'Biology','Computer Science','Mathematics');
+            """
+        },  
+        
+               {
+            "role": "user",
+            "content": "Find the name of students not in the 'Science' department."
+        },
+        {
+            "role": "assistant",
+		    "content": """SELECT DISTINCT Student.Name
+	FROM Student
+	JOIN Enrollment ON Student.StudentID = Enrollment.StudentID
+	JOIN Course ON Enrollment.CourseID = Course.CourseID
+	WHERE Course.Department not in ('Computer Science','Mathematics','Physics','Biology','Chemistry');
+            """
+        },     
+             {
+            "role": "user",
+            "content": "Find the number of students in each section."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Section, COUNT(*) AS NumberOfStudents
+                FROM Student
+                GROUP BY Section;
+            """
+        },
+            {
+            "role": "user",
+            "content": "Find the number of students in each section."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Section, COUNT(*) AS NumberOfStudents
+                FROM Student
+                GROUP BY Section;
+            """
+        },
+        
+             {
+            "role": "user",
+            "content": "Get the details of courses with more than 3 credits."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT *
+                FROM Course
+                WHERE Credits > 3;
+            """
+        },
+        
+             {
+            "role": "user",
+            "content": "Find the average grade of students in the 'Science' department."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                The current dataset contains grades as categorical values (e.g., 'A', 'B', 'C', 'F', etc.), so calculating an average grade is not possible as it requires numerical values.
+            """
+        },
+               {
+            "role": "user",
+            "content": "List the names of students who are enrolled in more than one course."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                GROUP BY S.StudentID
+                HAVING COUNT(E.CourseID) > 1;
+            """
+        },
+        
+              {
+            "role": "user",
+            "content": "Get the details of students who were born after 2000."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT *
+                FROM Student
+                WHERE DateOfBirth > '2000-01-01';
+            """
+        },
+        
+           {
+            "role": "user",
+            "content": "List the names of students who are enrolled in 'Biology' and have a grade of 'A'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.department = 'Biology' AND E.Grade = 'A';
+            """
+        },
+                {
+            "role": "user",
+            "content": "List the names of students who are enrolled in 'Cybersecurity Fundamentals' and have a grade of 'A'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.CourseName = 'Cybersecurity Fundamentals' AND E.Grade = 'A';
+            """
+        },
+        
+                {
+            "role": "user",
+            "content": "Find the total number of courses offered."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT COUNT(*) AS TotalCourses
+                FROM Course;
+            """
+        },
+        
+        
+                {
+            "role": "user",
+            "content": "List the names of students who are in section 'B' and have a CGPA greater than 3.0."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Name
+                FROM Student
+                WHERE Section = 'B' AND CGPA > 3.0;
+            """
+        },
+          
+                      {
+            "role": "user",
+            "content": "List the names of students who are in section 'M' and have a CGPA greater than 10.4"
+        },
+        {
+            "role": "assistant",
+            "content": """
+              Thank you for your query! However, it seems that the conditions you've provided are not currently aligned with the data structure we have. The available sections are A, B, and C, and the CGPA range is between 0 and 10.
+            """
+        },
+        
+     {
+            "role": "user",
+            "content": "Get the details of courses taught in the 'Engineering' department."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                Currently, our available departments are Computer Science, English, Mathematics, and Physics. We don't have an 'Engineering' department, but if you meant a different department or need information on courses from any of the listed departments, feel free to let us know!
+            """
+        },
+        
+       {
+            "role": "user",
+            "content": "Find the average age of students in each class."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Class, AVG(Age) AS AverageAge
+                FROM Student
+                GROUP BY Class;
+            """
+        },
+        
+        
+         {
+            "role": "user",
+            "content": "List the names of students who are enrolled in 'Chemistry' and are from 'New York'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.CourseName = 'Chemistry' AND S.Place = 'New York';
+            """
+        },
+        
+       {
+            "role": "user",
+            "content": "Get the details of students who have enrolled in 'Physics' after 2023."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.*
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.CourseName = 'Physics' AND E.EnrollmentDate > '2023-01-01';
+            """
+        },
+        
+               {
+            "role": "user",
+            "content": "List the names of students who are enrolled in 'history' and have a grade of 'B'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.department = 'History' AND E.Grade = 'B';
+            """
+        },
+                 
+                 
+                {
+            "role": "user",
+            "content": "Get the details of students who are in section 'C' and are male."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT *
+                FROM Student
+                WHERE Section = 'C' AND Gender = 'Male';
+            """
+        },
+        
+        
+                {
+            "role": "user",
+            "content": "Find the average grade of students in the 'Mathematics' course."
+        },
+        {
+            "role": "assistant",
+            "content": """
+		The current dataset contains grades as categorical values (e.g., 'A', 'B', 'C', 'F', etc.), so calculating an average grade is not possible as it requires numerical values.
+            """
+        },
+        
+                {
+            "role": "user",
+            "content": "List the names of students who are enrolled in 'Biology' and are from 'California'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.department = 'Biology' AND S.Place = 'California';
+            """
+        },
+        
+        
+                        {
+            "role": "user",
+            "content": "List the names of students who are enrolled in 'Advanced Grammar and Composition' and are from 'California'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.CourseName = 'Advanced Grammar and Composition' AND S.Place = 'California';
+            """
+        },
+                  {
+            "role": "assistant",
+            "content": """
+                SELECT S.*
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.department = 'Chemistry' AND E.EnrollmentDate < '2022-01-01';
+            """
+        },
+                {
+            "role": "user",
+            "content": "Find the number of students in each section who have a CGPA greater than 3.0."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT Section, COUNT(*) AS NumberOfStudents
+                FROM Student
+                WHERE CGPA > 3.0
+                GROUP BY Section;
+            """
+        },
+        
+         {
+            "role": "user",
+            "content": "List the names of students who are enrolled in 'Physics' and have a grade of 'C'."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.Name
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.department = 'Physics' AND E.Grade = 'C';
+            """
+        },
+                {
+            "role": "user",
+            "content": "Get the details of students who are in section 'D' and are female."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT *
+                FROM Student
+                WHERE Section = 'D' AND Gender = 'Female';
+            """
+        },
+        
+                {
+            "role": "user",
+            "content": "Get the details of students who have enrolled in 'Biology' after 2021."
+        },
+        {
+            "role": "assistant",
+            "content": """
+                SELECT S.*
+                FROM Student S
+                JOIN Enrollment E ON S.StudentID = E.StudentID
+                JOIN Course C ON E.CourseID = C.CourseID
+                WHERE C.department = 'Biology' AND E.EnrollmentDate > '2021-01-01';
+            """
+        }
+
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  
+       
+       
+        
+        
+        
+	   
+	   
+	   ]
+
+}
+
+
+
